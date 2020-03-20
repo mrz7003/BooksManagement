@@ -1,0 +1,27 @@
+spring:
+  # MySql连接池
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/booksmanagement?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password: admin
+  # Redis连接池
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  # Spring热部署
+  thymeleaf:
+    cache: false # 页面不加载缓存，修改即时生效
+  devtools:
+    restart:
+      enabled: true # 设置开启热部署
+mybatis:
+  # mybatis 别名扫描
+  type-aliases-package: entity
+  # 打印sql语句
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  port: 8089
+
